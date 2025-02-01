@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    options { skipDefaultCheckout(true) }
+    stages {
+        stage('checking the Java version') {
+            steps {
+        echo "Running on slave-1 node.."
+                sh 'java --version'
+                sh 'touch test.txt'
+        }
+        }
+    }
+}
